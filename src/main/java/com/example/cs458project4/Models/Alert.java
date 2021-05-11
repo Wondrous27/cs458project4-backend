@@ -6,19 +6,23 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Data
-@Entity
 @Table(
-        name = "disease"
+        name = "alert"
 )
-public class ChronicDisease {
+public class Alert {
     @Id
+    @GeneratedValue
     private Long id;
-    private String disease;
+    private Long symptomId;
+    private Long userId;
+    private String message;
 }

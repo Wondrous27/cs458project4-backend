@@ -8,8 +8,8 @@ import java.util.List;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Getter
-@Setter
+@AllArgsConstructor
+@Data
 @NoArgsConstructor
 @ToString
 @Table(
@@ -20,20 +20,21 @@ import static javax.persistence.GenerationType.SEQUENCE;
 )
 public class Suser {
     @Id
-    @SequenceGenerator(
-            name = "suser_sequence",
-            sequenceName = "suser_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = SEQUENCE,
-            generator = "suser_sequence"
-    )
-    @Column(
-            name = "id",
-            updatable = false,
-            nullable = false
-    )
+//    @SequenceGenerator(
+//            name = "suser_sequence",
+//            sequenceName = "suser_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = SEQUENCE,
+//            generator = "suser_sequence"
+//    )
+//    @Column(
+//            name = "id",
+//            updatable = false,
+//            nullable = false
+//    )
+    @GeneratedValue
     private Long id;
     @Column(
             name = "tcnumber",
