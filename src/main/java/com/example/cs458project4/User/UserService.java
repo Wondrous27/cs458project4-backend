@@ -56,10 +56,10 @@ public class UserService {
         return obj;
     }
 
-    public String createDisease(Long id, String disease){
-        crepo.save(new ChronicDisease(id, disease));
-        return "";
-    }
+//    public String createDisease(Long id, String disease){
+//        crepo.save(new ChronicDisease(id, disease));
+//        return "";
+//    }
     public Symptom createSymptom(Long id, String symptom){
         Symptom newSymptom = Symptom.builder().suser_fk(id).symptom(symptom).count(1).build();
         //Symptom symptom1 = new Symptom(symptom);
@@ -76,8 +76,15 @@ public class UserService {
         return symptom;
     }
 
-    public void updateSymptom(Symptom symptom){
+    public void updateSymptom(Symptom symptom, Long userId){
+
         srepo.save(symptom);
+
+        if (symptom.getCount() % 3 == 0) {
+            Alert newAlert = new Alert(symptom.getId(), userId, "");
+
+            arepo.save(newAlert);
+        }
     }
 
     public List<Alert> getAllAlerts(Long userId){

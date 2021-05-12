@@ -11,6 +11,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
+@Builder
 @ToString
 @Table(
         name = "suser",

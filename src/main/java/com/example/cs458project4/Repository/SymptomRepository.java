@@ -5,5 +5,5 @@ import com.example.cs458project4.Models.Symptom;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SymptomRepository extends JpaRepository<Symptom, Long> {
-
+    Symptom findBysymptom(String symptom);
 }

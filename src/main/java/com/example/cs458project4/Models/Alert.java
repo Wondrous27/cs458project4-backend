@@ -25,4 +25,10 @@ public class Alert {
     private Long symptomId;
     private Long userId;
     private String message;
+
+    public Alert(Long symptomId, Long userId, String message) {
+        this.symptomId = symptomId;
+        this.userId = userId;
+        this.message = message;
+    }
 }
